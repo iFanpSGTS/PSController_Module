@@ -15,6 +15,11 @@
 - GuckTubeYT (https://github.com/GuckTubeYT):
     - Inspirator
 
+## Example
+```bash
+> You can see the example on Example Folder
+```
+
 ## Installing Module
 ```bash
 > pip install pscontroll
