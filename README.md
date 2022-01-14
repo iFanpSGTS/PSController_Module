@@ -19,12 +19,12 @@
 ```bash
 > You can see the example on Example Folder
 > Quick Example:
-> def online(self, online_file):
-        try:
-            player_online = open(f"{online_file}").readlines()
-            return f'{player_online[0]} is Online!!'
-        except:
-            raise FileNotFoundPS
+        > def online(self, online_file):
+                  try:
+                      player_online = open(f"{online_file}").readlines()
+                      return f'{player_online[0]} is Online!!'
+                  except:
+                      raise FileNotFoundPS
 ```
 
 ## Installing Module
