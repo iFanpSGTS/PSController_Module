@@ -17,12 +17,12 @@
 
 ## Quick Example
 ```Python
-> def online(self, online_file):
-          try:
-              player_online = open(f"{online_file}").readlines()
-              return f'{player_online[0]} is Online!!'
-          except:
-              raise FileNotFoundPS
+def online(self, online_file):
+      try:
+          player_online = open(f"{online_file}").readlines()
+          return f'{player_online[0]} is Online!!'
+      except:
+          raise FileNotFoundPS
 ```
 
 ## More Example
