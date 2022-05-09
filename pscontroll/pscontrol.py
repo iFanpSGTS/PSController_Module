@@ -1,15 +1,21 @@
 import re, psutil, os, math
 from error import *
+from flask import *
+
+app = Flask(__name__)
 
 class Command:
     def __init__(self):
         pass
     
-    def startHttp(self):
-        @app.route('/growtopia/server_data.php', methods=['POST'])
+    def startHttp(self, server_ip, server_port):
+        @app.route('/growtopia/server_data.php', methods=['GET'])
         def page_serverdata():
-            return "server|127.0.0.1<br/>port|17091<br/>type|1<br/>maint|Server is Maintenance, please be patient<br/><br/>beta_server|127.0.0.1<br/>beta_port|17092<br/><br/>beta_type|1<br/>meta|localhost<br/>RTENDMARKERBS1001"
-        app.run()
+            if server_ip or server_port != None:
+                return f"server|{server_ip}<br/>port|{server_port}<br/>type|1<br/><br/>beta_server|127.0.0.1<br/>beta_port|17092<br/><br/>beta_type|1<br/>meta|undefined<br/>RTENDMARKERBS1001"
+            if server_ip or server_port == None:
+                return f"server|127.0.0.1<br/>port|17091<br/>type|1<br/><br/>beta_server|127.0.0.1<br/>beta_port|17092<br/><br/>beta_type|1<br/>meta|undefined<br/>RTENDMARKERBS1001"
+            app.run(host='0.0.0.0', port='80')
     
     def status(self, enet):
         try:
