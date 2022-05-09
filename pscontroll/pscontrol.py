@@ -4,7 +4,13 @@ from error import *
 class Command:
     def __init__(self):
         pass
-        
+    
+    def startHttp(self):
+        @app.route('/growtopia/server_data.php', methods=['POST'])
+        def page_serverdata():
+            return "server|127.0.0.1<br/>port|17091<br/>type|1<br/>maint|Server is Maintenance, please be patient<br/><br/>beta_server|127.0.0.1<br/>beta_port|17092<br/><br/>beta_type|1<br/>meta|localhost<br/>RTENDMARKERBS1001"
+        app.run()
+    
     def status(self, enet):
         try:
             for proc in psutil.process_iter():
