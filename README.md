@@ -33,6 +33,7 @@ def online(self, online_file):
 ## Installing Module
 ```bash
 > pip install pscontroll
+> I am sorry this ^^^^ module will not updated but will updated only on github
 ```
 
 ## Basic Configuration
