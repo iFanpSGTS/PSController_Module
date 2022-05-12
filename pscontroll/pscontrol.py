@@ -11,10 +11,7 @@ class Command:
     def startHttp(self, server_ip, server_port):
         @app.route('/growtopia/server_data.php', methods=['GET'])
         def page_serverdata():
-            if server_ip or server_port != None:
-                return f"server|{server_ip}<br/>port|{server_port}<br/>type|1<br/><br/>beta_server|127.0.0.1<br/>beta_port|17092<br/><br/>beta_type|1<br/>meta|undefined<br/>RTENDMARKERBS1001"
-            if server_ip or server_port == None:
-                return f"server|127.0.0.1<br/>port|17091<br/>type|1<br/><br/>beta_server|127.0.0.1<br/>beta_port|17092<br/><br/>beta_type|1<br/>meta|undefined<br/>RTENDMARKERBS1001"
+            return f"server|127.0.0.1<br/>port|17091<br/>type|1<br/><br/>beta_server|127.0.0.1<br/>beta_port|17092<br/><br/>beta_type|1<br/>meta|undefined<br/>RTENDMARKERBS1001"
             app.run(host='0.0.0.0', port='80')
     
     def status(self, enet):
